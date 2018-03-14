@@ -29,6 +29,14 @@
       display: none;
     }
   }
+  &-imgs_item.zoomed {
+    width: 50vw;
+    max-width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+  }
 }
 
 .links {
