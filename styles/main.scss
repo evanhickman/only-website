@@ -1,0 +1,19 @@
+$yellow: #dac744;
+$purple: #631A86;
+@mixin bp-mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin bp-tablet {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@import 'box-sizing';
+@import 'reset';
+@import 'video';
+@import 'content';
+@import 'layout';

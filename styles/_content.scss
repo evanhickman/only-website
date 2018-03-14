@@ -1,0 +1,57 @@
+.content {
+  width: 100%;
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.header {
+  position: relative;
+  &-title {
+    font-size: 7rem;
+    transform: rotate(90deg) translateX(40%);
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    &:hover {
+      border-top: 2px solid $yellow;
+      text-decoration: underline;
+    }
+  }
+  &-imgs {
+    transform: translate(85%, 30%);
+    max-width: 12rem;
+  }
+  &-imgs_item.top {
+    @include bp-mobile {
+      display: none;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  &-item {
+    margin: 1rem 0;
+    &_icon {
+      font-size: 2rem;
+    }
+  }
+}
+
+.home-middle {
+  display: flex;
+  justify-content: flex-end;
+  &_img {
+    max-width: 12rem;
+  }
+  &_img.three {
+    max-width: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
