@@ -1,47 +1,56 @@
 .content {
   width: 100%;
+
   &-grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+
+    &_item {
+      flex-basis: 50%;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-row * + * {
+      margin: 0 0 0 1rem;
+    }
   }
 }
 
-.header {
-  position: relative;
-  &-title {
-    font-size: 7rem;
-    transform: rotate(90deg) translateX(40%);
-    position: absolute;
-    right: 0;
-    z-index: 1000;
-    &:hover {
-      border-top: 2px solid $yellow;
-      text-decoration: underline;
+.left-column {
+  &_item {
+
+    .title {
+      font-size: 7rem;
+      z-index: 1000;
+      border-top: 10px solid $clear;
+      transform: rotate(90deg) translate(40%, 175%);
+
+      &:hover {
+        border-top: 10px solid $white;
+        text-decoration: underline;
+      }
+
+      @include bp-mobile {
+        font-size: 4rem;
+        transform: rotate(90deg) translate(30%, 30%);
+      }
     }
-  }
-  &-imgs {
-    transform: translate(85%, 30%);
-    max-width: 12rem;
-  }
-  &-imgs_item.top {
-    @include bp-mobile {
-      display: none;
+
+    .left-image {
+      max-width: 12rem;
     }
-  }
-  &-imgs_item.zoomed {
-    width: 50vw;
-    max-width: 50vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(0, -50%);
   }
 }
 
-.links {
+.right-column {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+
   &-item {
     margin: 1rem 0;
     &_icon {
@@ -50,16 +59,47 @@
   }
 }
 
-.home-middle {
+.zoom-photo {
+  max-width: 50vw;
+  width: 20vw;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+
+  @include bp-tablet {
+    width: 40vw;
+  }
+
+  &.zoomed {
+    width: 50vw;
+    max-width: 50vw;
+
+    @include bp-tablet {
+      width: 75vw;
+      max-width: 75vw;
+    }
+
+    @include bp-mobile {
+      width: 90vw;
+      max-width: 90vw;
+    }
+  }
+}
+
+.footer {
   display: flex;
   justify-content: flex-end;
-  &_img {
+  &-img {
     max-width: 12rem;
   }
-  &_img.three {
+  &-img.right {
     max-width: 10rem;
     position: absolute;
     bottom: 0;
     right: 0;
   }
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
 }

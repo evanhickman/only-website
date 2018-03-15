@@ -33,6 +33,11 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  transition: color .3s, border .3s;
+
+  &:hover {
+    color: $white;
+  }
 }
 
 h1,
